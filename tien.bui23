@@ -1,0 +1,56 @@
+
+def xem_lich():
+    thang=int(input('nhap thang'))
+    nam = int(input('nhap nam'))
+    if thang==1 or thang==3 or thang==5 or thang==7 or thang==8 or thang==10 or thang==12:
+        print('31 ngay')
+    elif thang==4 or thang==6 or thang==9 or thang==11:
+        print('có 30 ngày')
+    else:
+        if ((nam%4==0) and nam%100!=0) or (nam%400==0):
+            print('Thang có 29 ngày')
+        else:
+            print('Tháng có 28 ngày')
+
+    print(xem_lich)
+def tinh_luong():
+    h=int(input('nhap so gio'))
+    l=int(input('nhap so luong'))
+    if h<=40:
+        s=l*h
+    else:
+        s=(l*40)+(h-40)*1.5*l
+    print(s)
+def xem_luong():
+    nhap=int(input('nhap so nhan vien'))
+    list1=[]
+    list2=[]
+    for x in range(0,nhap):
+        print('nhap ten nhan vien')
+        list1.append(input())
+        print('nhap luong nhan vien')
+        list2.append(int(input()))
+    for i in range(nhap):
+        for j in range(nhap):
+            if list2[i] > list2[j]:
+                tmp = list2[i]
+                list2[i] = list2[j]
+                list2[j] = tmp
+                tmp = list1[i]
+                list1[i] = list1[j]
+                list1[j] = tmp
+            j += 1
+            i += 1
+    print(list1,list2)
+def nhap():
+    print(' ' * 42 + '*' * 100 + '\n' + ' ' * 42 + '*' * 35 + 'CHUONG TRINH THONG MINH' + '*' * 42 + '\n' + ' ' * 42 + '*' * 100 + '\n' + ' ' * 42 + '=' * 45 + 'MENU' + '=' * 51 + '\n' + 20 * '  ' + '1. Xem lịch: ' + '\n' + 20 * '  ' + '2. Tính lương: ' + '\n' + 20 * '  ' + '3. Xem lương:  ' + '\n' + 20 * '  ' + '4. Xem thông tin nhân viên: ' + '\n' + 20 * '  ' + '5. Tính điểm học sinh: ' + '\n' + 20 * '  ' + '6. Thoát chương'                                                                                                                                                                                                                                                                                                                                                                                                                       ' trình: ')
+    print(' ' * 42, end=' ')
+    n =int(input('xin vui lòng chọn số (để thực hiện chức năng mà bạn mong muốn):  '))
+    if n==1:
+        xem_lich()
+    elif n==2:
+        tinh_luong()
+    elif n==3:
+        xem_luong()
+nhap()
+
